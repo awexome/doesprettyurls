@@ -44,6 +44,21 @@ For the same object object, you'd now see this URL used in your site:
 Voila! Se Magnifique!
 
 
+== Use a Proc for Beauitification
+
+You also have the option of passing a Proc to the doesprettyurls declaration. This is useful if you want the
+URL for each object of a certain class to be decision-based or otherwise constructed. The format for massaging
+a Proc-based parameter goes something like this:
+
+  doesprettyurls :proc=>Proc.new {|tag| tag.shortname ? tag.shortname : tag.name }
+  
+The Proc is called during each request to to_param, so it is useful if realtime URL-id'ing is desired, though
+the merits of always-changing URL components for the same object are debatable :-)
+
+The to_param Proc you supply should act on an instance of the object, which is passed to it on execution (as
+the Tag in the example).
+
+
 
 == Copyright
 
