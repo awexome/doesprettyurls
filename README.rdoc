@@ -1,0 +1,51 @@
+= DoesPrettyURLs
+
+Uses ActiveRecord to_param to force your individual models to have attractive, slug-like, and more
+SEO-friendly URLs.
+
+
+== Installation
+
+Do the usual, of course:
+
+  gem install doesprettyurls
+
+And add a gem dependency to your Gemfile:
+
+  gem "doesprettyurls", ">=0.1.0"
+
+
+== Example Usage
+
+To add pretty URL support for objects of a given model, declare your desire for fanciness within the
+ActiveRecord model:
+
+  doesprettyurls
+  
+This will, by default, surgically attach a "slug"-ified version of your object's :name attribute to the
+objects id in URLs and for finders. This means where you used to have this:
+
+  # tag = <Tag @id=5, @name="Beer and Brats", @title="Something Really Cool"...>
+  http://myrailsproject.com/tags/5
+  
+You would now have something a bit fancier and search engine friendly like this:
+
+  http://myrailsproject.com/tags/5-beer-and-brats
+  
+You can tell the doesprettyurls invocation to use a different field for slugification, too. Just pass it
+along in your method call:
+
+  doesprettyurls :attribute=>:title
+  
+For the same object object, you'd now see this URL used in your site:
+
+  http://myrailsproject.com/tags/5-something-really-cool
+
+Voila! Se Magnifique!
+
+
+
+== Copyright
+
+Copyright (c) 2011 Awexome Labs, LLC. http://awexomelabs.com/
+
