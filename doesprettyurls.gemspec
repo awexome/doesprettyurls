@@ -5,15 +5,24 @@
 
 Gem::Specification.new do |s|
   s.name = %q{doesprettyurls}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Awexome Labs"]
-  s.date = %q{2011-02-16}
+  s.date = %q{2011-02-17}
   s.description = %q{Uses ActiveRecord to_param to force your individual models to have attractive and more SEO-friendly URLs}
   s.email = %q{gems@awexomelabs.com}
   s.extra_rdoc_files = [
     "README.rdoc"
+  ]
+  s.files = [
+    "Gemfile",
+    "Gemfile.lock",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "doesprettyurls.gemspec",
+    "lib/doesprettyurls.rb"
   ]
   s.homepage = %q{http://github.com/awexome/doesprettyvalues}
   s.licenses = ["MIT"]
